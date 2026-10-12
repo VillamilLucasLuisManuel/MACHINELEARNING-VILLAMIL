@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Identificador IA · Luis</title>
+  <meta name="description" content="Clasificador de imágenes con Machine Learning para identificar a Luis.">
+  <meta name="theme-color" content="#c1121f">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="imagenes/iconos/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="imagenes/iconos/apple-touch-icon.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="IA CBTIS 260">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- ENCABEZADO -->
+  <header class="encabezado">
+    <img src="imagenes/logo-cbtis260.png" alt="Logo CBTIS 260" class="logo-cbtis" width="90" height="90">
+    <div class="encabezado-texto">
+      <p class="titulo-sitio">Inteligencia Artificial</p>
+      <p class="subtitulo-sitio">Especialidad de Programación — CBTIS 260</p>
+    </div>
+  </header>
+
+  <!-- NAVEGACIÓN (2 páginas: Home y Solución) -->
+  <nav class="nav" aria-label="Menú principal">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="lista-menu">☰ Menú</button>
+    <ul id="lista-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="modelo.html" class="activo" aria-current="page">Solución</a></li>
+      <li><a href="informacion.html">Información</a></li>
+    </ul>
+  </nav>
+
+  <main id="contenido" tabindex="-1">
+
+    <section class="vista" aria-labelledby="t-sol">
+      <div class="encabezado-seccion"><span class="mini-etiqueta">ANÁLISIS DE IMÁGENES</span><h1 id="t-sol" class="titulo-bloque">Identificador IA de Luis</h1><p class="intro">Selecciona una fotografía desde tu computadora o celular. El resultado se calcula en el navegador.</p></div>
+
+      <div id="estado-modelo" class="aviso" role="status" aria-live="polite">
+        <span class="spinner" aria-hidden="true"></span><span id="estado-texto">Cargando modelo…</span>
+      </div>
+
+      <div class="clasificador">
+        <div class="tarjeta">
+          <h2>1. Elige una imagen</h2>
+          <div class="visor" id="visor">
+            <p class="visor-vacio" id="visor-vacio">Aquí aparecerá la vista previa</p>
+            <img id="vista-previa" alt="Vista previa de la fotografía a analizar" hidden>
+            <video id="video" autoplay muted playsinline hidden></video>
+          </div>
+          <div class="acciones">
+            <label class="btn" for="archivo">📁 Subir foto</label>
+            <input type="file" id="archivo" accept="image/*" class="oculto">
+            <button class="btn btn-borde" id="btn-camara" type="button">🎥 Activar cámara</button>
+            <button class="btn btn-gris" id="btn-limpiar" type="button">Limpiar / Nueva prueba</button>
+          </div>
+        </div>
+
+        <div class="tarjeta">
+          <h2>2. Resultado del análisis</h2>
+          <div id="resultado" class="resultado" role="status" aria-live="polite">
+            <span class="resultado-vacio">Aún no hay resultado.</span>
+          </div>
+          <div class="barras" id="barras" aria-label="Probabilidad por clase">
+            <div class="barra"><div class="barra-info"><span>Luis confirmado</span><span id="pct-luis">0%</span></div><div class="barra-fondo"><div class="barra-llena verde" id="barra-luis"></div></div></div>
+            <div class="barra"><div class="barra-info"><span>No Luis</span><span id="pct-no">0%</span></div><div class="barra-fondo"><div class="barra-llena rojo" id="barra-no"></div></div></div>
+          </div>
+          <p class="nota resultado-nota">Para evitar falsos positivos, solo se confirma a Luis cuando la confianza supera el umbral configurado.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="pie">
+    <div class="footer-contenido">
+      <div class="footer-copyright">
+        <span>&#169; 2026 — CBTIS 260 | Todos los derechos reservados</span>
+      </div>
+      <div class="footer-redes">
+        <!-- Cambia los href por los enlaces oficiales del plantel -->
+        <a class="red-facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <img src="imagenes/iconos/facebook.png" alt="" width="35" height="35">
+        </a>
+        <a class="red-instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <img src="imagenes/iconos/instagram.png" alt="" width="35" height="35">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script común: menú hamburguesa + registro del Service Worker -->
+  <script src="js/script.js"></script>
+  <script src="js/modelo.js"></script>
+</body>
+</html>

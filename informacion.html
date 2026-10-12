@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Información · Identificador IA</title>
+  <meta name="description" content="Información sobre el entrenamiento y uso del identificador IA de Luis.">
+  <meta name="theme-color" content="#c1121f">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="imagenes/iconos/icon-192.png" type="image/png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <header class="encabezado">
+    <img src="imagenes/logo-cbtis260.png" alt="Logo CBTIS 260" class="logo-cbtis" width="90" height="90">
+    <div class="encabezado-texto"><p class="titulo-sitio">Inteligencia Artificial</p><p class="subtitulo-sitio">Especialidad de Programación — CBTIS 260</p></div>
+  </header>
+  <nav class="nav" aria-label="Menú principal">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="lista-menu">☰ Menú</button>
+    <ul id="lista-menu"><li><a href="index.html">Home</a></li><li><a href="modelo.html">Solución</a></li><li><a href="informacion.html" class="activo" aria-current="page">Información</a></li></ul>
+  </nav>
+  <main id="contenido" tabindex="-1">
+    <section class="vista" aria-labelledby="t-info">
+      <div class="encabezado-seccion"><span class="mini-etiqueta">DOCUMENTACIÓN DEL PROYECTO</span><h1 id="t-info" class="titulo-bloque">Información del identificador</h1><p class="intro">Esta PWA utiliza un modelo de clasificación de imágenes entrenado con Teachable Machine.</p></div>
+      <div class="info-grid">
+        <article class="tarjeta"><span class="tarjeta-icono">🎯</span><h2>Objetivo</h2><p>Identificar si una fotografía corresponde a Luis y rechazar imágenes que no alcancen el nivel de confianza necesario.</p></article>
+        <article class="tarjeta"><span class="tarjeta-icono">🧠</span><h2>Cómo se entrenó</h2><p>El modelo aprendió con dos clases: <strong>Luis</strong> y <strong>No Luis</strong>, usando ejemplos variados de rostros, grupos, pantallas y otros contenidos.</p></article>
+        <article class="tarjeta"><span class="tarjeta-icono">📊</span><h2>Interpretación</h2><p>El porcentaje es una confianza del clasificador, no una prueba absoluta de identidad. Por eso la aplicación aplica un umbral antes de confirmar.</p></article>
+        <article class="tarjeta"><span class="tarjeta-icono">🔒</span><h2>Uso responsable</h2><p>Utiliza imágenes con autorización y evita emplear este resultado como único método para decisiones importantes o de seguridad.</p></article>
+      </div>
+      <article class="tarjeta"><h2>Qué hacer si el resultado es incorrecto</h2><ol class="lista-numerada"><li>Comprueba que el rostro aparezca con buena iluminación.</li><li>Prueba una fotografía diferente y que no se haya usado durante el entrenamiento.</li><li>Si el error se repite, agrega ejemplos representativos a la clase correspondiente y vuelve a exportar el modelo.</li></ol></article>
+      <article class="tarjeta aviso-info"><h2>Limitación importante</h2><p>El clasificador analiza la imagen completa. En una fotografía grupal puede confundirse si los rostros son pequeños o si el encuadre es muy distinto a los ejemplos de entrenamiento.</p></article>
+    </section>
+  </main>
+  <footer class="pie"><div class="footer-contenido"><div class="footer-copyright"><span>&#169; 2026 — CBTIS 260 | Todos los derechos reservados</span></div><div class="footer-redes"><a class="red-facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="imagenes/iconos/facebook.png" alt="" width="35" height="35"></a><a class="red-instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="imagenes/iconos/instagram.png" alt="" width="35" height="35"></a></div></div></footer>
+  <script src="js/script.js"></script>
+</body>
+</html>

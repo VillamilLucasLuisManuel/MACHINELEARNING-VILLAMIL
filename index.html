@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inicio · Identificador IA Luis</title>
+  <meta name="description" content="Identificador de fotografías con Machine Learning para reconocer a Luis.">
+  <meta name="theme-color" content="#c1121f">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="imagenes/iconos/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="imagenes/iconos/apple-touch-icon.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="IA CBTIS 260">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- ENCABEZADO -->
+  <header class="encabezado">
+    <img src="imagenes/logo-cbtis260.png" alt="Logo CBTIS 260" class="logo-cbtis" width="90" height="90">
+    <div class="encabezado-texto">
+      <p class="titulo-sitio">Inteligencia Artificial</p>
+      <p class="subtitulo-sitio">Especialidad de Programación — CBTIS 260</p>
+    </div>
+  </header>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="nav" aria-label="Menú principal">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="lista-menu">☰ Menú</button>
+    <ul id="lista-menu">
+      <li><a href="index.html" class="activo" aria-current="page">Home</a></li>
+      <li><a href="modelo.html">Solución</a></li>
+      <li><a href="informacion.html">Información</a></li>
+    </ul>
+  </nav>
+
+  <main id="contenido" tabindex="-1">
+
+    <section class="vista" aria-labelledby="t-home">
+      <div class="hero">
+        <span class="hero-etiqueta">PROYECTO DE MACHINE LEARNING</span>
+        <h1 id="t-home">¿Esta fotografía es de Luis?</h1>
+        <p>Sube una imagen y consulta el resultado de un modelo entrenado con Teachable Machine.</p>
+        <a class="btn btn-claro" href="modelo.html">Probar el identificador</a>
+      </div>
+
+      <article class="tarjeta">
+        <h2>Problemática</h2>
+        <p>En el CBTIS 260 se desea identificar fotografías mediante Machine Learning para determinar si una fotografía de un alumno corresponde o no a una persona específica, en este caso Luis.</p>
+      </article>
+
+      <article class="tarjeta">
+        <h2>Justificación</h2>
+        <p>La verificación de identidad a partir de fotografías se realiza hoy de forma manual, lo que consume tiempo y depende del criterio de cada persona. Automatizar esta tarea con inteligencia artificial resulta importante por las siguientes razones:</p>
+        <ul class="puntos">
+          <li><strong>Control de identidad:</strong> permite comprobar con rapidez y de forma consistente si una imagen corresponde a la persona esperada.</li>
+          <li><strong>Automatización y ahorro de tiempo:</strong> reduce la revisión manual de fotografías en trámites escolares.</li>
+          <li><strong>Apoyo a la credencialización y a la seguridad escolar:</strong> es un primer paso hacia procesos de registro y acceso más confiables.</li>
+          <li><strong>Aprendizaje de IA aplicada:</strong> los estudiantes conocen el ciclo completo de un proyecto de Machine Learning, desde el entrenamiento del modelo hasta su uso en una aplicación real.</li>
+        </ul>
+      </article>
+
+      <article class="tarjeta">
+        <h2>Objetivo general</h2>
+        <p>Desarrollar una aplicación web progresiva (PWA) que utilice un modelo de clasificación de imágenes para identificar si una fotografía corresponde a Luis, mostrando el resultado y su porcentaje de confianza.</p>
+      </article>
+
+      <h2 class="titulo-bloque">Cómo funciona</h2>
+      <ol class="pasos">
+        <li><span class="paso-ico" aria-hidden="true">📷</span><h3>Elige una imagen</h3><p>Sube una fotografía o activa la cámara.</p></li>
+        <li><span class="paso-ico" aria-hidden="true">🧠</span><h3>El modelo la analiza</h3><p>La red neuronal compara la imagen con lo aprendido en su entrenamiento.</p></li>
+        <li><span class="paso-ico" aria-hidden="true">✅</span><h3>Recibe el resultado</h3><p>Verás si es Luis o no, con una confianza orientativa.</p></li>
+      </ol>
+
+      <section class="tarjeta llamada" aria-label="Información adicional">
+        <div><span class="mini-etiqueta">CONOCE EL PROYECTO</span><h2>Entrenamiento, límites y uso responsable</h2><p>Consulta cómo se entrenó el modelo y qué significa realmente el resultado.</p></div>
+        <a class="btn btn-borde" href="informacion.html">Ver información</a>
+      </section>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="pie">
+    <div class="footer-contenido">
+      <div class="footer-copyright">
+        <span>&#169; 2026 — CBTIS 260 | Todos los derechos reservados</span>
+      </div>
+      <div class="footer-redes">
+        <!-- Cambia los href por los enlaces oficiales del plantel -->
+        <a class="red-facebook" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <img src="imagenes/iconos/facebook.png" alt="" width="35" height="35">
+        </a>
+        <a class="red-instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <img src="imagenes/iconos/instagram.png" alt="" width="35" height="35">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script común: menú hamburguesa + registro del Service Worker -->
+  <script src="js/script.js"></script>
+</body>
+</html>

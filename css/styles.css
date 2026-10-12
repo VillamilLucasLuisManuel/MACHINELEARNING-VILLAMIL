@@ -1,0 +1,142 @@
+/* ===== 1. PALETA (reutilizada del sitio anterior) ===== */
+:root{
+  --rojo:#c1121f; --rojo-oscuro:#8a0d17; --fondo:#f4f6f8; --blanco:#fff;
+  --texto:#222; --gris:#555; --borde:#ddd; --verde:#1b7f3b; --verde-claro:#e6f4ea; --rojo-claro:#fdecee;
+  --radio:12px; --sombra:0 2px 8px rgba(0,0,0,.09);
+}
+/* ===== 2. BASE ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--fondo);color:var(--texto);line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
+img,video{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+[hidden]{display:none!important}
+.oculto{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.saltar{position:absolute;left:-999px;top:0;background:var(--rojo-oscuro);color:#fff;padding:10px 14px;z-index:300}
+.saltar:focus{left:0}
+:focus-visible{outline:3px solid #ffbf47;outline-offset:2px}
+code{background:#eef1f4;padding:1px 6px;border-radius:4px;font-size:.9em}
+
+/* ===== 3. ENCABEZADO (mismo diseño que el sitio principal) ===== */
+.encabezado{background:var(--blanco);padding:20px 15px;box-shadow:0 2px 5px rgba(0,0,0,.1);display:flex;align-items:center;justify-content:center;gap:20px}
+.encabezado .logo-cbtis{width:90px;height:auto;margin:0;flex:none}
+.encabezado-texto{text-align:left}
+.titulo-sitio{color:var(--rojo);font-size:2.2rem;font-weight:bold;line-height:1.2}
+.subtitulo-sitio{color:var(--gris);font-size:1rem;font-weight:bold}
+
+/* ===== 4. NAVEGACIÓN ===== */
+.nav{background:var(--rojo);position:sticky;top:0;z-index:100;box-shadow:0 2px 5px rgba(0,0,0,.2)}
+.nav-toggle{width:100%;background:none;border:0;color:#fff;font:bold 1.05rem Arial,sans-serif;padding:.9rem 1rem;text-align:left;cursor:pointer}
+.nav ul{display:none;flex-direction:column}
+.nav ul.abierto{display:flex}
+.nav a{display:block;color:#fff;font-weight:bold;padding:.9rem 1.2rem;border-top:1px solid rgba(255,255,255,.18);transition:background .25s}
+.nav a:hover{background:var(--rojo-oscuro)}
+.nav a.activo{background:var(--rojo-oscuro);box-shadow:inset 4px 0 0 #fff}
+
+/* ===== 5. CONTENIDO ===== */
+main{flex:1;width:100%;max-width:1050px;margin:0 auto;padding:1rem}
+main:focus{outline:none}
+.vista{display:grid;gap:1rem}
+.nota{font-size:.9rem;color:var(--gris)}
+.titulo-bloque{color:var(--rojo);font-size:1.4rem;margin-top:.6rem;border-bottom:3px solid var(--rojo);padding-bottom:.2rem;width:fit-content}
+.intro{color:var(--gris)}
+.tarjeta{background:var(--blanco);border-radius:var(--radio);padding:1.2rem;box-shadow:var(--sombra)}
+.tarjeta h2{color:var(--rojo);font-size:1.25rem;margin-bottom:.6rem}
+.tarjeta p+p,.tarjeta p+ul{margin-top:.6rem}
+.puntos{display:grid;gap:.6rem}
+.puntos li{padding-left:1rem;border-left:4px solid var(--rojo)}
+
+/* Hero del Home */
+.hero{background:linear-gradient(135deg,var(--rojo),var(--rojo-oscuro));color:#fff;border-radius:var(--radio);padding:1.6rem 1.3rem;box-shadow:var(--sombra)}
+.hero-etiqueta,.mini-etiqueta{display:inline-block;font-size:.75rem;font-weight:bold;letter-spacing:.12em;opacity:.9;margin-bottom:.55rem}
+.hero h1{font-size:clamp(1.7rem,7vw,2.8rem);line-height:1.15;margin-bottom:.7rem}
+.hero p{max-width:60ch;margin-bottom:1.1rem}
+
+/* Pasos */
+.pasos{display:grid;gap:1rem}
+.pasos li{background:var(--blanco);border-radius:var(--radio);padding:1.1rem;box-shadow:var(--sombra);border-top:4px solid var(--rojo)}
+.paso-ico{font-size:2rem;display:block}
+.pasos h3{color:var(--rojo-oscuro);margin:.3rem 0}
+.encabezado-seccion{padding:.4rem 0 .2rem}
+.encabezado-seccion .mini-etiqueta{color:var(--rojo)}
+.encabezado-seccion .intro{max-width:70ch}
+.llamada{display:flex;align-items:center;justify-content:space-between;gap:1rem;border-left:5px solid var(--rojo)}
+.llamada h2{margin-bottom:.25rem}
+.info-grid{display:grid;gap:1rem}
+.tarjeta-icono{font-size:2rem;display:block;margin-bottom:.4rem}
+.lista-numerada{list-style:decimal;padding-left:1.4rem;display:grid;gap:.55rem}
+.aviso-info{border-left:5px solid #e3a008;background:#fff8e1}
+.resultado small{display:block;color:inherit;font-size:.9rem;margin-top:.65rem;max-width:38ch}
+.resultado-nota{margin-top:.8rem;text-align:center}
+
+/* ===== 6. BOTONES ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;min-height:44px;padding:.6rem 1.1rem;border-radius:999px;border:2px solid var(--rojo);background:var(--rojo);color:#fff;font:bold .95rem Arial,sans-serif;cursor:pointer;transition:background .2s,transform .1s}
+.btn:hover{background:var(--rojo-oscuro);border-color:var(--rojo-oscuro)}
+.btn:active{transform:scale(.97)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn-borde{background:#fff;color:var(--rojo)}
+.btn-borde:hover{background:var(--rojo-claro);color:var(--rojo-oscuro)}
+.btn-gris{background:#fff;color:var(--gris);border-color:var(--borde)}
+.btn-gris:hover{background:#eee;border-color:#bbb}
+.btn-claro{background:#fff;color:var(--rojo)}
+.btn-claro:hover{background:#ffe9eb;color:var(--rojo-oscuro)}
+.acciones{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem}
+.acciones.centro{justify-content:center}
+
+/* ===== 7. CLASIFICADOR ===== */
+.aviso{display:flex;align-items:center;gap:.7rem;padding:.8rem 1rem;border-radius:var(--radio);background:#fff8e1;border:1px solid #ffe08a}
+.aviso.listo{background:var(--verde-claro);border-color:#a8d5b5}
+.aviso.error{background:var(--rojo-claro);border-color:#f3b4ba}
+.spinner{width:1.2rem;height:1.2rem;border:3px solid #e0c46a;border-top-color:var(--rojo);border-radius:50%;animation:giro .8s linear infinite;flex:none}
+.aviso.listo .spinner,.aviso.error .spinner{display:none}
+@keyframes giro{to{transform:rotate(360deg)}}
+.clasificador{display:grid;gap:1rem}
+.visor{min-height:16rem;background:#eef1f4;border:2px dashed var(--borde);border-radius:var(--radio);display:flex;align-items:center;justify-content:center;overflow:hidden}
+/* La foto se reduce para caber, conserva sus proporciones y se centra (sin deformarse ni salirse del cuadro) */
+.visor img{width:auto;height:auto;max-width:100%;max-height:min(70vh,520px);object-fit:contain}
+.visor video{width:100%;height:auto;max-height:min(70vh,520px);object-fit:contain}
+.visor-vacio{color:var(--gris);padding:1rem;text-align:center}
+.resultado{min-height:8rem;display:grid;place-items:center;text-align:center;border-radius:var(--radio);padding:1rem;background:#f8f9fa;border:2px solid var(--borde)}
+.resultado-vacio{color:var(--gris)}
+.resultado.si{background:var(--verde-claro);border-color:var(--verde);color:var(--verde)}
+.resultado.no{background:var(--rojo-claro);border-color:var(--rojo);color:var(--rojo)}
+.resultado strong{display:block;font-size:clamp(1.6rem,7vw,2.4rem);line-height:1.15}
+.resultado span.conf{font-size:1.15rem;font-weight:bold}
+.resultado.error{background:var(--rojo-claro);border-color:var(--rojo);color:var(--rojo-oscuro)}
+.barras{display:grid;gap:.8rem;margin-top:1rem}
+.barra-info{display:flex;justify-content:space-between;font-weight:bold;font-size:.95rem}
+.barra-fondo{height:16px;background:#e6e9ec;border-radius:99px;overflow:hidden}
+.barra-llena{height:100%;width:0;border-radius:99px;transition:width .4s ease}
+.barra-llena.verde{background:var(--verde)} .barra-llena.rojo{background:var(--rojo)}
+
+/* ===== 9. PIE (mismo diseño que el sitio principal) ===== */
+.pie{background:#222;color:#fff;padding:20px;margin-top:20px}
+.footer-contenido{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+.footer-copyright{font-size:.9rem}
+.footer-redes{display:flex;align-items:center;gap:15px}
+/* Íconos con fondo transparente (sin círculo blanco) */
+.footer-redes a{display:block;width:35px;height:35px;background:none;padding:0;transition:transform .2s}
+.footer-redes a:hover{transform:translateY(-3px)}
+.footer-redes a img{width:35px;height:35px;max-width:none;object-fit:contain;background:none}
+
+/* ===== 10. TABLET Y ESCRITORIO ===== */
+@media (min-width:700px){
+  .nav-toggle{display:none}
+  .nav ul,.nav ul.abierto{display:flex;flex-direction:row;justify-content:center}
+  .nav a{border-top:0;padding:1rem 2rem}
+  .nav a.activo{box-shadow:inset 0 -4px 0 #fff}
+  main{padding:1.6rem}
+  .hero{padding:2.4rem}
+  .pasos{grid-template-columns:repeat(3,1fr)}
+  .clasificador{grid-template-columns:1fr 1fr}
+  .info-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:768px){
+  .titulo-sitio{font-size:1.5rem}
+  .encabezado{flex-direction:column;text-align:center;gap:10px}
+  .encabezado-texto{text-align:center}
+  .footer-contenido{flex-direction:column;text-align:center}
+  .llamada{align-items:flex-start;flex-direction:column}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
